@@ -1,5 +1,6 @@
 package DioPadroesDeProjeto;
 
+import Facade.Facade;
 import Singleton.SingletonEager;
 import Singleton.SingletonLazy;
 import Singleton.SingletonLazyHolder;
@@ -12,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Singleton
+        System.out.println("\n*----------Singleton----------*\n");
 
         SingletonLazy lazy = SingletonLazy.getInstancia();
         System.out.println(lazy);
@@ -28,9 +30,8 @@ public class Main {
         lazyHolder = SingletonLazyHolder.getInstancia();
         System.out.println(lazyHolder);
 
-        System.out.println("*---------------------------------------*\n");
-
         //  Strategy
+        System.out.println("\n*----------Strategy----------*\n");
 
         ComportamentoNormal normal = new ComportamentoNormal();
         ComportamentoDefensivo defensivo = new ComportamentoDefensivo();
@@ -48,5 +49,11 @@ public class Main {
         robo.mover();
         robo.mover();
         robo.mover();
+
+        //Facade
+        System.out.println("\n*----------Facade----------*\n");
+
+        Facade facade = new Facade();
+        facade.migrarCliente("João Rodrigo", "88354-000");
     }
 }
